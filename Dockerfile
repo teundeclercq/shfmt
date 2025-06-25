@@ -14,4 +14,4 @@ RUN apk add --no-cache bash curl \
 WORKDIR /scripts
 
 # Default to shell (so you can override or drop into shell)
-ENTRYPOINT ["/bin/sh"]
+CMD ["/bin/sh"]
