@@ -16,7 +16,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Extract tag (if present)
         id: vars
@@ -40,4 +40,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/shfmt:${{ steps.vars.outputs.DOCKER_TAG }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/shfmt:${{ steps.vars.outputs.DOCKER_TAG }}t 
